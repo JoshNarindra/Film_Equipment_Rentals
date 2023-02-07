@@ -3,6 +3,7 @@ using Film_Equipment_Rentals.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Film_Equipment_Rentals.Migrations
 {
     [DbContext(typeof(Film_Equipment_RentalsContext))]
-    partial class Film_Equipment_RentalsContextModelSnapshot : ModelSnapshot
+    [Migration("20230207134418_ticketaddusername")]
+    partial class ticketaddusername
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,10 +58,6 @@ namespace Film_Equipment_Rentals.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("EquipmentInventoryId")
                         .HasColumnType("int");
 
@@ -71,6 +69,10 @@ namespace Film_Equipment_Rentals.Migrations
 
                     b.Property<float>("Total")
                         .HasColumnType("real");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

@@ -3,6 +3,7 @@ using Film_Equipment_Rentals.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Film_Equipment_Rentals.Migrations
 {
     [DbContext(typeof(Film_Equipment_RentalsContext))]
-    partial class Film_Equipment_RentalsContextModelSnapshot : ModelSnapshot
+    [Migration("20230207140940_ticketaddemailremoveusername")]
+    partial class ticketaddemailremoveusername
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

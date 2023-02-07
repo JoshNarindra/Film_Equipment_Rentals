@@ -6,12 +6,19 @@ namespace Film_Equipment_Rentals.Models
     public class OrderTicket
     {
         [Key]
+        [Display(Name = "Ticket ID")]
         public int Id { get; set; }
 
         //Foreign Keys
+        [Display(Name = "Equipment Name")]
         public int EquipmentInventoryId { get; set; }
         [Display(Name = "Equipment Name")]
         public EquipmentInventory? EquipObj { get; set; }
+
+        //CurrentUser
+        [Required]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
 
         //Additional Attributes
         [Required]

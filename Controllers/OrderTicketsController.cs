@@ -57,7 +57,7 @@ namespace Film_Equipment_Rentals.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,EquipmentInventoryId,Quantity,Total,Status")] OrderTicket orderTicket)
+        public async Task<IActionResult> Create([Bind("Id,EquipmentInventoryId,Email,Quantity,Total,Status")] OrderTicket orderTicket)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +91,7 @@ namespace Film_Equipment_Rentals.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,EquipmentInventoryId,Quantity,Total,Status")] OrderTicket orderTicket)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,EquipmentInventoryId,Email,Quantity,Total,Status")] OrderTicket orderTicket)
         {
             if (id != orderTicket.Id)
             {
