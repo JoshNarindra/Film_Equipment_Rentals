@@ -43,7 +43,14 @@
         </dd>
     </dl>
 </div>
+
+<div>
+    <button type="button" class="btn btn-success">Approve</button>
+    <button type="button" class="btn btn-danger">Reject</button>
+</div>
+
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Back to List</a> |
+    <a asp-action="Delete" asp-route-id="@Model?.Id">Delete</a>
 </div>
