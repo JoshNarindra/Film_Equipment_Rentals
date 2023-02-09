@@ -164,5 +164,11 @@ namespace Film_Equipment_Rentals.Controllers
         {
           return _context.OrderTicket.Any(e => e.Id == id);
         }
+
+        //Method to check whether stock for ticket available.
+
+        //Method to approve ticket.
+
+        //Method to disapprove ticket.
     }
 }
