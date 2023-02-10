@@ -23,15 +23,22 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         
+                        @if (User.IsInRole("Admin")){
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="EquipmentInventories" asp-action="Index">Inventory</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="OrderTickets" asp-action="Index">Tickets</a>
                         </li>
+                        }
+
+                        @if ((User.IsInRole("Admin")) || (User.IsInRole("User")))
+                        {
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="OrderTickets" asp-action="Create">New Ticket</a>
                         </li>
+                        }
 
                         @*<li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>

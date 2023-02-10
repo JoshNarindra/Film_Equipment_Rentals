@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Film_Equipment_Rentals.Data;
 using Film_Equipment_Rentals.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Film_Equipment_Rentals.Controllers
 {
@@ -20,6 +21,7 @@ namespace Film_Equipment_Rentals.Controllers
         }
 
         // GET: OrderTickets
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             var film_Equipment_RentalsContext = _context.OrderTicket.Include(o => o.EquipObj);
@@ -166,7 +168,7 @@ namespace Film_Equipment_Rentals.Controllers
         }
 
         //Method to check whether stock for ticket available.
-
+        
         //Method to approve ticket.
 
         //Method to disapprove ticket.
