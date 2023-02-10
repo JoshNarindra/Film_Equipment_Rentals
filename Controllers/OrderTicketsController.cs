@@ -21,7 +21,6 @@ namespace Film_Equipment_Rentals.Controllers
         }
 
         // GET: OrderTickets
-        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             var film_Equipment_RentalsContext = _context.OrderTicket.Include(o => o.EquipObj);
